@@ -1,0 +1,16 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: idempotent-transaction-service
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+app:
+  processor:
+    interval-ms: 1000
+    max-attempts: 3
+    retry-delay-ms: 1000
+    batch-size: 100
